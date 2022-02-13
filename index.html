@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Gift 14-Feb</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="https://cdn-icons.flaticon.com/png/512/2524/premium/2524744.png?token=exp=1644746384~hmac=e03e7ff1ca3b02c116fda518c7138873">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center text-light my-5"><strong>Happy Valentime day !!!</strong></h1>
+    </div>
+    <div class="col-12 mt-5 d-flex justify-content-center">
+      <div id="letter"></div>
+      <div class="box"></div>
+        <div class="box-body">
+          <img class="img" src="../CL/272973135_4718269291601965_8266790177999014137_n.jpg" >
+          <div class="box-lid">
+            
+            <div class="box-bowtie"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+<script>
+  $(function(){
+    $(".box-body").on("click",function(){
+      $(".img").css({"width":"150","height":"auto"})
+      $(".box-body").addClass("hover");
+    })
+
+    $("img").on("click",function () {
+      $(".img").addClass("mesage");
+      typeWriter();
+
+    })
+
+    var i = 0;
+    var txt = '"My Dearest,I love you more than I could ever express in a few words. I long to be with you as I feel the happiest when I am in your arms. You are the most incredible thing that has ever happened to me and I treasure you more than you know. When I look into your eyes, my dear, I am lost in a world of magic. I love you. I love you each and every day. I love you more than words can say.Happy Valentine’s DayYours forever"';
+    var speed = 50;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("letter").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+  })
+</script>
+</body>
+</html>
