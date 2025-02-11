@@ -1,0 +1,24 @@
+{
+  "name": "valungtungwithme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "hungdv",
+  "license": "ISC",
+  "description": "App mời cr đi chơi valetine",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hud0520/vlt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hud0520/vlt/issues"
+  },
+  "homepage": "https://github.com/Hud0520/vlt#readme"
+}
