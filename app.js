@@ -7,20 +7,34 @@ app.listen(3000, () => {
 
 app.use('/img', express.static(__dirname + '/img'));
 app.use('/fonts', express.static(__dirname + '/fonts'));
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(express.json());
+
 const router = express.Router();
+var u = "un";
 app.get('/', function(req, res){
+    // ZGxpcmg= dl
+    // ZGmlssg= tl
+    // ZGmlssg= tl
+    switch(req.query.d){
+        case "ZGxpcmg" : u = "2006";break;
+        case "ZGmlssg" : u = "2002";break;
+        case "ZGxpsmg" : u = "2000";break;
+    }
     res.sendFile(__dirname + '/index.html');
 });
 
 
 app.post('/log', function(req, res){
     const fs = require('node:fs');
-    const content = req.body;
-    fs.writeFile('/log', content, err => {
-        if (err) {
-            console.error(err);
-        } else {
-            // file written successfully
-        }
-    });
+    var body = req.body;
+    body.username = u;
+    const content = JSON.stringify(body);
+    console.log(content);
+    fs.appendFileSync('/us.log', content, );
+    res.status(200).send("");
 })

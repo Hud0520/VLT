@@ -1,7 +1,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="/img/tt.png">
+    <title>Valentine with hungdz</title>
     <style>
         @font-face {
             font-family: 'Angelia';
@@ -189,7 +190,7 @@
             height: 70%;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: end;
             flex-direction: column;
             gap: 100px;
         }
@@ -269,6 +270,7 @@
     <canvas></canvas>
 </div>
 <script>
+    var requestId = self.crypto.randomUUID();
     var okScale = 1;
     var notOkScale = 1;
     function notOk() {
@@ -283,16 +285,18 @@
         }
         if(notOkScale<= 0.1){
             document.querySelector(".button-44").style.display = "none";
-            document.querySelector(".button-87").innerHTML = "Em đồng ý !!!!";
+            document.querySelector(".button-87").innerHTML = "Em đồng ý nhaaaa !!!!";
         }else {
             document.querySelector(".waiting").src = "/img/peach-goma-peach-and-goma.gif";
             document.querySelector(".button-44").style.transform = "scale("+notOkScale+")";
         }
+        log("Not Ok");
 
     }
     function ok() {
         document.querySelector(".ss1").style.transform = "translateX(-100%)";
         document.querySelector(".ss2").style.transform = "translateX(100%)";
+        log("Oke");
 
     }
 
@@ -370,6 +374,17 @@
             this.flip += this.flipSpeed
             this.draw()
         }
+    }
+
+    function log(action){
+        fetch("/log", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ requestId: requestId, action:action }),
+        })
     }
 </script>
 </body>
