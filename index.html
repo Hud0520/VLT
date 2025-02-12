@@ -1,0 +1,376 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Angelia';
+            src: url('fonts/Angelia Beauty.ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            position: inherit;
+            font-family: Angelia,serif;
+
+        }
+
+        .content {
+            height: 100vh;
+            width: 70%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .ss1 {
+            width: 100%;
+            position: absolute;
+            background-image: url("/img/gb.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 0.5s;
+        }
+
+        .ss2 {
+            width: 100%;
+            position: absolute;
+            right: 100%;
+            z-index: 2;
+            background-image: url("/img/bg2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 0.5s;
+            background-position: 50% 50%;
+            overflow: hidden;
+        }
+
+        @media (max-width: 1080px) {
+            .ss2 {
+                background-position: 85% 75% ;
+            }
+        }
+
+        /* CSS */
+        /*.button-87 {*/
+        /*    margin: 10px;*/
+        /*    padding: 15px 30px;*/
+        /*    text-align: center;*/
+        /*    text-transform: uppercase;*/
+        /*    transition: 0.5s;*/
+        /*    background-size: 200% auto;*/
+        /*    color: white;*/
+        /*    border-radius: 10px;*/
+        /*    display: block;*/
+        /*    border: 0px;*/
+        /*    font-weight: 700;*/
+        /*    box-shadow: 0px 0px 14px -7px #f09819;*/
+        /*    background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);*/
+        /*    cursor: pointer;*/
+        /*    user-select: none;*/
+        /*    -webkit-user-select: none;*/
+        /*    touch-action: manipulation;*/
+        /*}*/
+
+        /*.button-87:hover {*/
+        /*    background-position: right center;*/
+        /*    !* change the direction of the change here *!*/
+        /*    color: #fff;*/
+        /*    text-decoration: none;*/
+        /*}*/
+
+        /*.button-87:active {*/
+        /*    transform: scale(0.95);*/
+        /*}*/
+
+        /* From Uiverse.io by vinodjangid07 */
+
+        .button-87{
+            margin: 10px;
+            padding: 15px 30px;
+            z-index: 30;
+            background-color: rgb(251 113 133);
+            border-radius: 10px;
+            color: white;
+            position: relative;
+            font-size: 1.15em;
+            font-weight: 700;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 700ms;
+            text-shadow: 3px 5px 2px #be123c;
+            overflow: hidden;
+            box-shadow: none;
+            border: none;
+        }
+        .button-87:hover{
+            text-shadow: 2px 2px 2px #fda4af;
+        }
+        .button-87::after {
+            content:'';
+            z-index: -1;
+            position: absolute;
+            width: 0.25rem;
+            height: 0.25rem;
+            background-color: rgb(159 18 57);
+            left: calc(5 * 0.25rem);
+            overflow: hidden;
+            bottom: 0;
+            transform: translateY(100%);
+            border-radius: 10px;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 700ms;
+        }
+        .button-87:hover:after{
+            transform: scale(300);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 700ms;
+        }
+
+
+        /* CSS */
+        .button-44 {
+            background: #e62143;
+            border-radius: 10px;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            font-size: 1.15em;
+            font-weight: 700;
+            justify-content: center;
+            margin: 10px;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            text-decoration-skip-ink: auto;
+            text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+            text-underline-offset: 1px;
+            transition: all .2s ease-in-out;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            word-break: break-word;
+            border: 0;
+        }
+
+        .button-44:active,
+        .button-44:focus {
+            border-bottom-style: none;
+            border-color: #dadada;
+            box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+            outline: 0;
+        }
+
+        .button-44:hover {
+            border-bottom-style: none;
+            border-color: #dadada;
+        }
+
+        @media (min-width: 768px) {
+            .button-56 {
+                padding: 0 40px;
+            }
+        }
+
+        .buttons{
+            display: flex;
+            text-align: center;
+        }
+
+        .img {
+            position: absolute;
+            bottom: -4px;
+        }
+        .text-box{
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 100px;
+        }
+
+        .ok-hov{
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        .text-box:has(.button-87:hover)  + .img .ok-hov{
+            opacity: 1;
+        }
+
+        .not-ok-hov{
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        .text-box:has(.button-44:hover)  + .img .not-ok-hov{
+            opacity: 1;
+        }
+        .waiting{
+            opacity: 1;
+            transition: all 0.5s;
+        }
+
+        .text-box:has(button:hover)  + .img .waiting{
+            opacity: 0;
+        }
+
+        .img{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        img{
+            width: 20%;
+            height: auto;
+        }
+        canvas{
+            position: absolute;
+            top: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="ss1">
+    <div class="content">
+        <div class="text-box">
+
+            <div class="text">
+                DDi choi valentine vowi anh nhe
+            </div>
+            <div class="buttons">
+                <button class="button-87" onclick="ok()">Đồng ý</button>
+                <button class="button-44" onclick="notOk()">Éo nhe</button>
+            </div>
+
+
+        </div>
+        <div class="img">
+            <img src="/img/peach-goma-wink-heart.gif" class="ok-hov">
+            <img src="/img/tkthao219-peach-goma.gif" class="waiting">
+            <img src="/img/peach-cat.gif" class="not-ok-hov">
+            <img src="/img/goma-peach.gif" class="waiting">
+
+        </div>
+    </div>
+</div>
+<div class="ss2">
+    <div class="content">
+        <div class="text-box"></div>
+        <div class="img">
+
+        </div>
+    </div>
+    <canvas></canvas>
+</div>
+<script>
+    var okScale = 1;
+    var notOkScale = 1;
+    function notOk() {
+        okScale+= 0.4;
+        notOkScale -= 0.4
+        document.querySelector(".button-87").style.transform = "scale("+okScale+")";
+        if(notOkScale<= 0.6){
+            document.querySelector(".not-ok-hov").src = "/img/peach-and.gif";
+        }
+        if(notOkScale<= 0.4){
+            document.querySelector(".not-ok-hov").src = "/img/cat-peach.gif";
+        }
+        if(notOkScale<= 0.1){
+            document.querySelector(".button-44").style.display = "none";
+            document.querySelector(".button-87").innerHTML = "Em đồng ý !!!!";
+        }else {
+            document.querySelector(".waiting").src = "/img/peach-goma-peach-and-goma.gif";
+            document.querySelector(".button-44").style.transform = "scale("+notOkScale+")";
+        }
+
+    }
+    function ok() {
+        document.querySelector(".ss1").style.transform = "translateX(-100%)";
+        document.querySelector(".ss2").style.transform = "translateX(100%)";
+
+    }
+
+    const canvas = document.querySelector('canvas')
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    const ctx = canvas.getContext('2d')
+
+    const TOTAL = 100
+    const petalArray = []
+
+    const petalImg = new Image()
+    petalImg.src = '/img/petal.png'
+    petalImg.addEventListener('load', () => {
+        for (let i = 0; i < TOTAL; i++) {
+            petalArray.push(new Petal())
+        }
+        render()
+    })
+
+    function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        petalArray.forEach(petal => petal.animate())
+        window.requestAnimationFrame(render)
+    }
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+    })
+
+    let mouseX = 0
+    function touchHandler(e) {
+        mouseX = (e.clientX || e.touches[0].clientX) / window.innerWidth
+    }
+    window.addEventListener('mousemove', touchHandler)
+    window.addEventListener('touchmove', touchHandler)
+
+    // Petal class
+    class Petal {
+        constructor() {
+            this.x = Math.random() * canvas.width
+            this.y = (Math.random() * canvas.height * 2) - canvas.height
+            this.w = 25 + Math.random() * 15
+            this.h = 20 + Math.random() * 10
+            this.opacity = this.w / 40
+            this.flip = Math.random()
+
+            this.xSpeed = 1.5 + Math.random() * 2
+            this.ySpeed = 1 + Math.random() * 1
+            this.flipSpeed = Math.random() * 0.03
+        }
+
+        draw() {
+            if (this.y > canvas.height || this.x > canvas.width) {
+                this.x = -petalImg.width
+                this.y = (Math.random() * canvas.height * 2) - canvas.height
+                this.xSpeed = 1.5 + Math.random() * 2
+                this.ySpeed = 1 + Math.random() * 1
+                this.flip = Math.random()
+            }
+            ctx.globalAlpha = this.opacity
+            ctx.drawImage(
+                petalImg,
+                this.x,
+                this.y,
+                this.w * (0.6 + (Math.abs(Math.cos(this.flip)) / 3)),
+                this.h * (0.8 + (Math.abs(Math.sin(this.flip)) / 5))
+            )
+        }
+
+        animate() {
+            this.x += this.xSpeed + mouseX * 5
+            this.y += this.ySpeed + mouseX * 2
+            this.flip += this.flipSpeed
+            this.draw()
+        }
+    }
+</script>
+</body>
+</html>

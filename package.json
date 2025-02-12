@@ -11,7 +11,8 @@
   "description": "App mời cr đi chơi valetine",
   "dependencies": {
     "express": "^4.21.2",
-    "mongoose": "^8.10.0"
+    "mongoose": "^8.10.0",
+    "vercel": "^41.0.3"
   },
   "repository": {
     "type": "git",
