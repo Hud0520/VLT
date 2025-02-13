@@ -35,6 +35,5 @@ app.post('/log', function(req, res){
     body.username = u;
     const content = JSON.stringify(body);
     console.log(content);
-    fs.appendFileSync('/us.log', content, );
     res.status(200).send("");
 })
