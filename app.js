@@ -21,9 +21,9 @@ app.get('/', function(req, res){
     // ZGmlssg= tl
     // ZGmlssg= tl
     switch(req.query.d){
-        case "ZGxpcmg" : u = "2006";break;
-        case "ZGmlssg" : u = "2002";break;
-        case "ZGxpsmg" : u = "2000";break;
+        case "ZGxpcmg" : u = "dlinh";break;
+        case "ZGmlssg" : u = "tlinh";break;
+        case "ZGxpsmg" : u = "ly";break;
     }
     res.sendFile(__dirname + '/index.html');
 });
